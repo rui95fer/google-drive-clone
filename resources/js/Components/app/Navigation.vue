@@ -7,19 +7,25 @@ import NavLink from '@/Components/app/NavLink.vue';
 
 <template>
     <nav class="min-w-52">
-        <div class="flex h-20 items-center gap-3 px-3">
-            <Link href="/">
-                <ApplicationLogo
-                    class="block h-9 w-auto fill-current text-gray-800"
-                />
-                LaraStorage
-            </Link>
-        </div>
+        <Link
+            class="flex h-20 items-center gap-3 px-3"
+            :href="route('myFiles')"
+        >
+            <ApplicationLogo
+                class="block h-9 w-auto fill-current text-gray-800"
+            />
+            LaraStorage
+        </Link>
+
         <div class="px-3">
             <CreateNewDropdown />
 
             <div class="py-3">
-                <NavLink href="/">My Files</NavLink>
+                <NavLink
+                    :href="route('myFiles')"
+                    :active="route().current('myFiles')"
+                    >My Files
+                </NavLink>
                 <NavLink href="/">Shared With Me</NavLink>
                 <NavLink href="/">Shared By Me</NavLink>
                 <NavLink href="/">Trash</NavLink>

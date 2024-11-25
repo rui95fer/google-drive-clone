@@ -48,7 +48,7 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         $file = new File();
-        $file->file_name = $user->email;
+        $file->name = $user->email;
         $file->is_directory = true;
         $file->makeRoot()->save();
 

@@ -11,5 +11,8 @@ class File extends Model
 {
     use NodeTrait, SoftDeletes, HasCreatorAndUpdater;
 
-
+    public function isOwnedBy($userId): bool
+    {
+        return $this->created_by_user == $userId;
+    }
 }

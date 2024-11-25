@@ -14,10 +14,10 @@ return new class extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->id();
-            $table->string('file_name');
-            $table->string('file_path')->nullable();
+            $table->string('name', 1024);
+            $table->string('path', 1024)->nullable();
             $table->nestedSet();
-            $table->boolean('is_directory')->default(false);
+            $table->boolean('is_directory');
             $table->string('mime_type')->nullable();
             $table->integer('file_size')->nullable();
             $table->timestamps();
